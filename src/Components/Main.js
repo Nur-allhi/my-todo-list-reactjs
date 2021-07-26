@@ -2,11 +2,12 @@ import React from "react";
 import CreateTask from "./CreateTask";
 import TaskList from "./TaskList";
 
+const tasks=[];
 export default class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: [],
+            tasks: tasks,
         }
     }
     createTask = (task) => {
@@ -15,6 +16,7 @@ export default class Main extends React.Component {
             return
         }
         tasks.push({task, isCompleted: false})
+        this.setState({tasks: tasks})
     }
 
     render() {
@@ -22,9 +24,9 @@ export default class Main extends React.Component {
             <div>
                 <h1>Todos</h1>
                 <div>
-                    <CreateTask />
+                    <CreateTask createTask={this.createTask}/>
                     <br />
-                    <TaskList />
+                    <TaskList tasks={this.state.tasks} />
                 </div>
             </div>
         )

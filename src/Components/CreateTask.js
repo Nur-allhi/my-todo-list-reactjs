@@ -10,7 +10,6 @@ export default class CreateTask extends Component {
 
     handleChange = (event) => {
         this.setState({ task: event.target.value })
-        // console.log(event.target.value)
     }
     handleSubmit = (event) => {
         event.preventDefault()
