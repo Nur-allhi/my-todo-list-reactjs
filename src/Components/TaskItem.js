@@ -31,7 +31,7 @@ export default class TaskItem extends Component {
     }
     render() {
         return (
-            <tr>
+            <tr className="task-item-row">
                 {this.state.isEditing ?
                     <>
                         <td>

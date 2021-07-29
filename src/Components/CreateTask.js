@@ -18,13 +18,10 @@ export default class CreateTask extends Component {
     }
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className="creat-task-form" onSubmit={this.handleSubmit}>
                 <input type="text" placeholder="Enter task"
                     value={this.state.task} onChange={this.handleChange} autoFocus />
                 <button type="submit" >Add</button>
-
-
-
             </form>
         )
     }
